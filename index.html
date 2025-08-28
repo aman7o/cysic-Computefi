@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComputeFi: Turn Compute Into Liquid Yield | Cysic</title>
+    <meta name="description" content="Learn how Cysic's ComputeFi is revolutionizing decentralized compute by turning hardware into ownable, yield-bearing assets for the future of ZK and AI.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/mona-sans/index.css">
+    <style>
+        body { 
+            font-family: 'Mona Sans', sans-serif; 
+            background-color: #0a0a0a; 
+            color: #EAEAEA;
+        }
+        .glass-card {
+            background-color: rgba(23, 23, 23, 0.6);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .aurora-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150vw;
+            height: 150vh;
+            background-image: radial-gradient(circle at 20% 30%, rgba(79, 70, 229, 0.3) 0%, rgba(79, 70, 229, 0) 35%),
+                              radial-gradient(circle at 80% 70%, rgba(34, 197, 94, 0.25) 0%, rgba(34, 197, 94, 0) 30%),
+                              radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.2) 0%, rgba(147, 51, 234, 0) 30%);
+            filter: blur(100px);
+            z-index: 0;
+            animation: aurora-flow 20s infinite alternate;
+        }
+        @keyframes aurora-flow {
+            0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+            100% { transform: translate(-50%, -50%) rotate(30deg) scale(1.2); }
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .accordion-button.active + .accordion-content {
+            max-height: 500px; /* Adjust as needed */
+        }
+        .accordion-button.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="bg-black/30 backdrop-blur-md sticky top-0 z-50 border-b border-white/10 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="https://cysic.xyz" target="_blank" rel="noopener noreferrer" class="font-bold text-xl text-white">Cysic</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#vision" class="text-stone-300 hover:text-white px-3 py-2 text-sm font-medium">Vision</a>
+                        <a href="#understanding" class="text-stone-300 hover:text-white px-3 py-2 text-sm font-medium">Understand</a>
+                        <a href="#workflow" class="text-stone-300 hover:text-white px-3 py-2 text-sm font-medium">Workflow</a>
+                        <a href="#applications" class="text-stone-300 hover:text-white px-3 py-2 text-sm font-medium">Applications</a>
+                        <a href="#innovation" class="text-stone-300 hover:text-white px-3 py-2 text-sm font-medium">Technology</a>
+                        <a href="#economics" class="text-stone-300 hover:text-white px-3 py-2 text-sm font-medium">Economics</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative overflow-hidden">
+        <div class="aurora-background"></div>
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative z-10 text-center py-24 md:py-32 min-h-screen flex flex-col justify-center items-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tighter max-w-4xl">ComputeFi: Turn Compute Into Liquid Yield</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-stone-300">Own the hardware, harvest the yields, and feed the future of AI innovation.</p>
+            <p class="mt-8 text-xl font-semibold text-white">Why rent compute when you can <span class="text-green-400">own</span> it?</p>
+            <a href="#vision" class="mt-10 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg shadow-indigo-600/30">
+                Explore ComputeFi
+            </a>
+        </section>
+
+        <!-- Vision Section -->
+        <section id="vision" class="relative z-10 py-20 md:py-28 scroll-mt-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <p class="text-2xl md:text-3xl font-semibold text-white italic">"Think of ComputeFi like owning farmland for the digital age."</p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-2 gap-8 items-stretch">
+                    <div class="glass-card p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-red-400">The Problem: Centralized & Extractive</h3>
+                        <p class="mt-4 text-stone-300">The current cloud model locks users into a rent-only system dominated by a few gatekeepers. This stifles innovation, inflates costs, and limits access to the most valuable resource of the 21st century: computation.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-xl shadow-lg border-green-400/50">
+                        <h3 class="text-2xl font-bold text-green-400">The Solution: Ownable & Democratic</h3>
+                        <p class="mt-4 text-stone-300">ComputeFi crushes this model by tokenizing GPUs and ASICs. It transforms hardware into liquid, yield-bearing assets, making high-performance compute ownable, accessible, and a productive part of the decentralized economy.</p>
+                    </div>
+                </div>
+                <div class="mt-16 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-center text-white">Why ComputeFi Represents a Fundamental Shift</h3>
+                    <p class="mt-4 text-center text-stone-300">The world relies on computational resources for everything from basic web services to cutting-edge AI development, yet access remains centralized. ComputeFi is the natural evolution—from utility to asset class. Just as DeFi made finance programmable, ComputeFi makes computation liquid and investable.</p>
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                        <div class="glass-card p-6 rounded-xl">
+                            <h4 class="font-semibold text-white">Decentralization</h4>
+                            <p class="text-sm text-stone-400 mt-1">No single point of failure or control.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl">
+                            <h4 class="font-semibold text-white">Ownership</h4>
+                            <p class="text-sm text-stone-400 mt-1">Hardware generates direct yields for owners.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl">
+                            <h4 class="font-semibold text-white">Verifiability</h4>
+                            <p class="text-sm text-stone-400 mt-1">Every computation is cryptographically provable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Understanding ComputeFi Section -->
+        <section id="understanding" class="relative z-10 py-20 md:py-28 scroll-mt-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-white tracking-tight">From Rental to Ownership: A Paradigm Shift</h2>
+                </div>
+                <div class="mt-16 grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-8 rounded-xl">
+                        <h3 class="font-bold text-xl text-white">Traditional Cloud Model</h3>
+                        <ul class="mt-4 space-y-2 text-stone-300 list-disc list-inside">
+                            <li>Pay-per-use rental structure</li>
+                            <li>Centralized control by tech giants</li>
+                            <li>No ownership or value accumulation</li>
+                            <li>Susceptible to censorship & price hikes</li>
+                            <li>Limited access to specialized hardware</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card p-8 rounded-xl border-green-400/50">
+                        <h3 class="font-bold text-xl text-white">ComputeFi Ownership Model</h3>
+                        <ul class="mt-4 space-y-2 text-stone-300 list-disc list-inside">
+                            <li>Own the productive asset (tokenized hardware)</li>
+                            <li>Earn yield from real computational work</li>
+                            <li>Participate in a global, permissionless market</li>
+                            <li>Contribute to and benefit from network effects</li>
+                            <li>Direct access to cutting-edge specialized hardware</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-16 glass-card p-8 rounded-xl max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-center text-white">Real-World Analogy & The Economic Engine</h3>
+                    <p class="mt-4 text-center text-stone-300">Think of traditional cloud like staying in hotels—you pay nightly rates with no long-term value. ComputeFi is like owning rental properties—your initial investment generates ongoing income while the underlying asset has intrinsic value. Every ZK proof generated or AI model run represents real economic value that flows directly to hardware owners, creating a truly productive digital asset class.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The ComputeFi Workflow Section -->
+        <section id="workflow" class="relative z-10 py-20 md:py-28 scroll-mt-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-white tracking-tight">The Complete ComputeFi Task Cycle</h2>
+                </div>
+                <div class="mt-16 max-w-3xl mx-auto space-y-8">
+                    <div class="glass-card p-6 rounded-xl"><span class="font-bold text-indigo-400">Step 1: Task Submission</span><p class="text-stone-300 text-sm mt-1">A developer deposits payment into a smart contract and submits their computational requirements.</p></div>
+                    <div class="glass-card p-6 rounded-xl"><span class="font-bold text-indigo-400">Step 2: Decentralized Assignment</span><p class="text-stone-300 text-sm mt-1">The network uses a Verifiable Random Function (VRF) to fairly select eligible provers based on stake and capability.</p></div>
+                    <div class="glass-card p-6 rounded-xl"><span class="font-bold text-indigo-400">Step 3: Competitive Execution</span><p class="text-stone-300 text-sm mt-1">Multiple provers compete to complete the task, with the network accepting the fastest valid submissions.</p></div>
+                    <div class="glass-card p-6 rounded-xl"><span class="font-bold text-indigo-400">Step 4: Multi-Layer Verification</span><p class="text-stone-300 text-sm mt-1">Independent verifiers must approve each result, ensuring robust security without single points of failure.</p></div>
+                    <div class="glass-card p-6 rounded-xl"><span class="font-bold text-indigo-400">Step 5: Automatic Settlement</span><p class="text-stone-300 text-sm mt-1">Once verified, payments are automatically distributed to participants, and results are delivered.</p></div>
+                    <div class="glass-card p-6 rounded-xl"><span class="font-bold text-indigo-400">Step 6: Network Learning</span><p class="text-stone-300 text-sm mt-1">The network records performance data, updating reputation scores and optimizing future task assignments.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real Applications Showcase -->
+        <section id="applications" class="relative z-10 py-20 md:py-28 scroll-mt-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-white tracking-tight">Powering Verifiable Computation</h2>
+                </div>
+                <div class="mt-16 grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-xl">
+                        <h4 class="text-xl font-bold text-white">Zero-Knowledge Rollups</h4>
+                        <p class="mt-2 text-stone-400">Providing the computational backbone for Ethereum scaling, privacy solutions, and secure cross-chain communication.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-xl">
+                        <h4 class="text-xl font-bold text-white">Verifiable Artificial Intelligence</h4>
+                        <p class="mt-2 text-stone-400">Enabling proof of AI inference, distributed model training, and trustless systems for the emerging agent economy.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-xl">
+                        <h4 class="text-xl font-bold text-white">Cryptographic Infrastructure</h4>
+                        <p class="mt-2 text-stone-400">Supporting the broader ecosystem with secure ZK-powered bridges, complex on-chain data processing, and privacy-preserving identity systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Technology Innovation Section -->
+        <section id="innovation" class="relative z-10 py-20 md:py-28 scroll-mt-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center">
+                    <h2 class="text-4xl font-bold text-white tracking-tight">Technology Innovation</h2>
+                </div>
+                <div class="mt-16 grid lg:grid-cols-2 gap-8">
+                    <div class="glass-card p-8 rounded-xl">
+                        <h3 class="font-bold text-xl text-white">The Specialized Hardware Advantage</h3>
+                        <p class="mt-4 text-stone-300">General-purpose hardware like CPUs and GPUs are inefficient for the repetitive math in ZK proofs. Cysic's custom ASICs provide orders-of-magnitude better performance and energy efficiency through application-specific design and a software-hardware co-design philosophy.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-xl">
+                        <h3 class="font-bold text-xl text-white">Proof-of-Compute: Consensus Through Useful Work</h3>
+                        <p class="mt-4 text-stone-300">Unlike PoW or PoS, Proof-of-Compute rewards useful work that directly benefits the network. This ties network security to productive computational capacity, aligns incentives with real value creation, and creates natural resistance to Sybil attacks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Network Stats -->
+        <section id="stats" class="relative z-10 py-20 md:py-28 scroll-mt-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-4xl font-bold text-white tracking-tight">A Thriving Ecosystem, Live Today</h2>
+                        <p class="mt-4 text-stone-300">Cysic isn't just a vision; it's a rapidly growing network with real participants and proven performance, backed by the biggest names in Web3.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 text-center">
+                        <div>
+                            <p class="text-5xl font-bold text-indigo-400" data-target="200000">0</p>
+                            <p class="mt-2 text-stone-400">Verifiers</p>
+                        </div>
+                        <div>
+                            <p class="text-5xl font-bold text-green-400" data-target="118000">0</p>
+                            <p class="mt-2 text-stone-400">Provers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16">
+                    <p class="text-center text-stone-400 uppercase tracking-widest">Powering The Leaders in ZK</p>
+                    <div class="mt-8 flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
+                        <span class="font-semibold text-2xl text-stone-500">Scroll</span>
+                        <span class="font-semibold text-2xl text-stone-500">Manta</span>
+                        <span class="font-semibold text-2xl text-stone-500">zkSync</span>
+                        <span class="font-semibold text-2xl text-stone-500">Succinct</span>
+                        <span class="font-semibold text-2xl text-stone-500">Polyhedra</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Deep Dive -->
+        <section id="deep-dive" class="relative z-10 py-20 md:py-28 scroll-mt-16">
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-white tracking-tight">Technology Deep Dive</h2>
+                </div>
+                <div class="mt-12 space-y-4">
+                    <div class="glass-card rounded-xl">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-xl font-bold text-white">Hypercube IR: Software Optimization</span>
+                            <span class="accordion-icon text-3xl text-indigo-400 transition-transform duration-300">+</span>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-stone-300">A custom Intermediate Representation layer that restructures ZK circuits into highly parallel data flows, perfectly matching the C1 ASIC's architecture and maximizing hardware efficiency.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-xl font-bold text-white">ZKPoG: GPU Acceleration</span>
+                            <span class="accordion-icon text-3xl text-indigo-400 transition-transform duration-300">+</span>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-stone-300">The ZK Proof of Generation framework is a GPU-acceleration stack that optimizes the entire proof pipeline. It makes proving on consumer-grade GPUs up to <span class="font-bold text-green-400">52x faster</span> than traditional CPU-based methods.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-xl font-bold text-white">Network Protocol & Security</span>
+                            <span class="accordion-icon text-3xl text-indigo-400 transition-transform duration-300">+</span>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-stone-300">The network uses the proven CometBFT consensus engine for fast, secure finality. To ensure proof integrity, each task requires validation from a minimum of <span class="font-bold text-white">6 independent verifiers</span> before being accepted by the network.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Economic Model -->
+        <section id="economics" class="relative z-10 py-20 md:py-28 scroll-mt-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-white tracking-tight">A Sustainable Economic Model</h2>
+                </div>
+                <div class="mt-16 grid lg:grid-cols-2 gap-8 items-start">
+                    <div class="glass-card p-8 rounded-xl">
+                        <h3 class="font-bold text-xl text-white">The Dual-Token Architecture</h3>
+                        <p class="mt-4 text-stone-300">Single-token systems struggle with competing incentives where speculation can overwhelm utility. Cysic's two-token model separates these concerns for long-term alignment and stability.</p>
+                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-black/20 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-400">$CYS (Utility)</h4>
+                                <p class="text-sm text-stone-400 mt-1">For exchange, security, and work compensation. Network usage drives its demand.</p>
+                            </div>
+                            <div class="bg-black/20 p-4 rounded-lg">
+                                <h4 class="font-bold text-indigo-400">$CGT (Governance)</h4>
+                                <p class="text-sm text-stone-400 mt-1">Earned via participation, not purchased. Aligns governance with long-term contribution.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-8 rounded-xl">
+                        <h4 class="font-bold text-xl text-white">Participation Requirements</h4>
+                        <ul class="mt-4 space-y-3 text-stone-300">
+                            <li><span class="font-semibold text-white">Provers:</span> Stake 10 $CYS</li>
+                            <li><span class="font-semibold text-white">Verifiers:</span> Stake 0.5 $CYS</li>
+                        </ul>
+                        <p class="mt-4 text-green-400 font-semibold">All participants earn rewards in both $CYS and $CGT.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 relative z-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-stone-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://x.com/cysic_xyz" target="_blank" rel="noopener noreferrer" class="hover:text-white">Twitter</a>
+                <a href="https://cysic.xyz/docs" target="_blank" rel="noopener noreferrer" class="hover:text-white">Docs</a>
+            </div>
+            <p>This is for educational purposes only, created by Aman, and is not backed by Cysic.</p>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Animated counters
+    const counters = document.querySelectorAll('[data-target]');
+    const speed = 200; // The lower the slower
+
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText.replace(/,/g, '');
+        const inc = target / speed;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + inc).toLocaleString();
+            setTimeout(() => animateCounter(counter), 10);
+        } else {
+            counter.innerText = target.toLocaleString();
+        }
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                animateCounter(counter);
+                observer.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+
+    // Accordion functionality
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const isActive = button.classList.contains('active');
+            // Close all accordions
+            accordionButtons.forEach(otherButton => {
+                otherButton.classList.remove('active');
+            });
+            // Toggle current accordion if it wasn't already active
+            if (!isActive) {
+                button.classList.add('active');
+            }
+        });
+    });
+
+    // Header shrink on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('py-2');
+            header.classList.remove('py-0');
+        } else {
+            header.classList.add('py-0');
+            header.classList.remove('py-2');
+        }
+    });
+});
+</script>
+</body>
+</html>
